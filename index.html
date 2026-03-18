@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Listen Together</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- 🔥 NAVBAR -->
+    <div class="navbar">
+      <h2>🎧 Listen Together</h2>
+
+      <div class="nav-controls">
+        <button onclick="spotifyLogin()">Login</button>
+
+        <input type="text" id="searchInput" placeholder="Search song..." />
+        <button onclick="searchSong()">Search</button>
+
+        <input id="room" placeholder="Room name" />
+        <button onclick="joinRoom()">Join</button>
+      </div>
+    </div>
+
+    <!-- 🔥 SONG RESULTS -->
+    <div id="results" class="song-container"></div>
+
+    <!-- 🔥 PLAYER CONTROLS -->
+    <div class="controls">
+      <button onclick="prevSong()">⏮</button>
+      <button onclick="pauseSong()">⏸</button>
+      <button onclick="nextSong()">⏭</button>
+    </div>
+
+    <!-- 🔌 Scripts -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://sdk.scdn.co/spotify-player.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
