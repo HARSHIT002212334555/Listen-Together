@@ -79,8 +79,8 @@ io.on("connection", (socket) => {
 app.get("/callback", async (req, res) => {
   const code = req.query.code;
 
-  const client_id = "8d9d252b4cf7445f84a887354176f3ad";
-  const client_secret = "ee77c3c901c84fd9b6fb2538f1dd8052";
+  const client_id = process.env.CLIENT_ID;
+  const client_secret = process.env.CLIENT_SECRET;
 
   const auth = Buffer.from(client_id + ":" + client_secret).toString("base64");
 
