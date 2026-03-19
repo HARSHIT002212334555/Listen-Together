@@ -57,6 +57,10 @@ async function getToken() {
 }
 
 // 🔹 PLAYER
+
+window.onSpotifyWebPlaybackSDKReady = () => {
+  initPlayer();
+};
 function initPlayer() {
   if (!window.Spotify) return setTimeout(initPlayer, 500);
 
@@ -69,8 +73,6 @@ function initPlayer() {
     deviceId = device_id;
     transferPlayback();
   });
-
-  player.connect();
 }
 
 // 🔹 ACTIVATE DEVICE
@@ -110,6 +112,11 @@ async function searchSong() {
 
     results.appendChild(div);
   });
+
+  if (!data.tracks || !data.tracks.items) {
+    alert("Login properly first!");
+    return;
+  }
 }
 
 // 🔹 PLAY
