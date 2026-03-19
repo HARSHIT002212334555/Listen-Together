@@ -32,7 +32,7 @@ socket.on("users-update", (count) => {
 // 🔹 LOGIN
 function spotifyLogin() {
   const clientId = "8d9d252b4cf7445f84a887354176f3ad";
-  const redirectUri = "http://127.0.0.1:3000/callback";
+  const redirectUri = "https://listen-together-zrb0.onrender.com";
 
   const scope =
     "streaming user-read-email user-read-private user-modify-playback-state user-read-playback-state";
